@@ -1,3 +1,6 @@
+#ifndef __STUDENT_CPP__
+#define __STUDENT_CPP__
+
 #include "Student.h"
 
 
@@ -88,3 +91,5 @@ void Student::setUnitsCompleted(double units) {}
 
 void Student::setFullTimeStatus(bool isFullTime) {}
 
+
+#endif // __STUDENT_CPP__
