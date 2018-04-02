@@ -26,7 +26,8 @@ Student::~Student() {}
 
 std::list<std::string> Student::getCourses()
 {
-	return std::list<std::string>;
+	std::list<std::string> courses;
+	return courses;
 }
 
 
@@ -42,7 +43,7 @@ void Student::removeCourse(std::string course)
 }
 
 
-void Student:: printCourse()
+void Student:: printCourses()
 {
 
 }
@@ -56,7 +57,7 @@ void Student::setCourses(std::list<std::string> courses)
 
 void
 Student::
-clearCourse(std::string course)
+clearCourses()
 {
 
 }
@@ -69,7 +70,7 @@ struct tm Student::getAdmitDate()
 }
 
 
-School Student::getSchool() { return School::UNDEFINED; }
+Student::School Student::getSchool() { return UNDEFINED; }
 
 double Student::getGPA() { return 0; }
 

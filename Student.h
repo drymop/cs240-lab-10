@@ -2,6 +2,7 @@
 #define __STUDENT_H__
 
 #include <list>
+#include <string>
 #include "Person.h"
 
 class Student : public Person
@@ -12,7 +13,12 @@ class Student : public Person
         enum School {AS, JSLS, LAW, RSB, SPCS, UNDEFINED};
 
     protected:
-        // instance variables here...
+        int    m_day_admit;
+        int    m_month_admit;
+        int    m_year_admit;
+        School m_school;
+        bool   m_is_full_time; 
+        double m_units_completed;
         
     public:
         Student();                      // explicitly call Person() on implementation
