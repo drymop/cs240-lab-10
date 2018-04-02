@@ -34,8 +34,8 @@ std::string Person::getLastName()
 
 struct tm Person::getDateOfBirth()
 {
-    struct tm = "";
-    return tm;
+    struct tm dob;
+    return dob;
 }
 
 std::string Person::getAddress()
