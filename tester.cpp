@@ -4,12 +4,14 @@
 
 void testStudent(Student& s, int day_admit, int mo_admit, int yr_admit, 
             Student::School school, double gpa, double unit_completed, 
-            bool is_full_time);
+            bool is_full_time, std::list<std::string> courses);
 
 int main(int argc, char const *argv[])
 {
     using std::cout;
     using std::endl;
+    using std::string;
+    using std::list;
 
     int          urid      {1111};
     std::string  netid     {"lmtuan"};
@@ -29,6 +31,7 @@ int main(int argc, char const *argv[])
     bool         is_full_tm{true};
     double       unit_completed {22.5};
     double       gpa       {3.4};
+    list<string> courses   {"Math", "Chem", "Physics", "CS"}; 
 
     //--------------------------------------------------------------------------
     //Tests Person
@@ -97,9 +100,10 @@ int main(int argc, char const *argv[])
     s1.setGPA(gpa);
     s1.setUnitsCompleted(unit_completed);
     s1.setFullTimeStatus(is_full_tm);
+    s1.setCourses(courses);
 
     testStudent(s1, day_admit, mo_admit, yr_admit, school, 
-            gpa, unit_completed, is_full_tm);
+            gpa, unit_completed, is_full_tm, courses);
 
     //-------------
     // Constructor
@@ -108,22 +112,48 @@ int main(int argc, char const *argv[])
     Student s2 {urid, netid, lname, fname, dob_day, dob_mo, dob_yr,
                 email, address, phone, day_admit, mo_admit, yr_admit,
                 school, is_full_tm, unit_completed};
+    s2.setGPA(gpa);
+    s2.setCourses(courses);
 
     testStudent(s2, day_admit, mo_admit, yr_admit, school, 
-            gpa, unit_completed, is_full_tm);
+            gpa, unit_completed, is_full_tm, courses);
 
     cout << endl << "Test copy constructor" << endl;
-    Student s3 = s2;
+    Student s3 = s1;
 
     testStudent(s3, day_admit, mo_admit, yr_admit, school, 
-            gpa, unit_completed, is_full_tm);
+            gpa, unit_completed, is_full_tm, courses);
+
+    //-------------
+    // Set, add, clear courses
+    cout << endl << "Test courses-related methods" << endl;
+    
+    s1.clearCourses();
+    cout << "  Clear courses:" << endl;
+    cout << "    "; s1.printCourses();
+    cout << endl;
+
+    s1.addCourse("Dance");
+    cout << "  Add Dance course:" << endl;
+    cout << "    "; s1.printCourses();
+    cout << endl;
+
+    s1.setCourses(courses);
+    cout << "  Set courses to [Math, Chem, Physics, CS]:" << endl;
+    cout << "    "; s1.printCourses();
+    cout << endl;
+
+    s1.removeCourse("Chem");
+    cout << "  Remove Chem course:" << endl;
+    cout << "    "; s1.printCourses();
+    cout << endl;
 
     return 0;
 }
 
 void testStudent(Student& s, int day_admit, int mo_admit, int yr_admit, 
             Student::School school, double gpa, double unit_completed, 
-            bool is_full_time)
+            bool is_full_time, std::list<std::string> courses)
 {
     using std::cout;
     using std::endl;
@@ -146,4 +176,12 @@ void testStudent(Student& s, int day_admit, int mo_admit, int yr_admit,
 
     // Full time status
     cout << "  Full time: " << s.isFullTime() << " [" << is_full_time << "]" << endl;
+
+    // Courses
+    cout << "  Courses: " << endl << "     ";
+    s.printCourses();
+    cout << endl << "    [";
+    for (auto course : courses)
+        cout << course << ", ";
+    cout << "]" << endl;
 }
