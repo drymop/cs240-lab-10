@@ -19,7 +19,9 @@ class Student : public Person
         School m_school;
         bool   m_is_full_time; 
         double m_units_completed;
-        
+        double m_gpa;
+        std::list<std::string> m_courses;
+
     public:
         Student();                      // explicitly call Person() on implementation
         Student(const Student& other);  // call Person(other) on implementation
