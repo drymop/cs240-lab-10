@@ -7,7 +7,17 @@
 class Person
 {
     protected:
-        // instance variables here...
+	int urid = 0;
+	std::string netid = "";
+	std::string lname = "";
+	std::string fname = ""; 
+        int dob_day = 0;
+	int dob_month = 0;
+	int dob_year = 0;
+        std::string email = "";
+	std::string address = "";
+	long phone = 0;
+ 	struct tm dob;
 
     public:
         Person();
