@@ -18,9 +18,10 @@ Student(int urid, std::string netid, std::string lname, std::string fname,
        School school, bool is_full_time, 
        double units_completed)
 	: Person(urid, netid, lname, fname, dob_day, dob_mo, 
-			dob_yr, email, address, phone)
+			dob_yr, email, address, phone),
+	  m_day_admit(day_admit), m_month_admit(month_admit), m_year_admit(year_admit),
+	  m_school(school), m_is_full_time(is_full_time)
 {
-
 }
 
 
