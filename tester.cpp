@@ -43,40 +43,64 @@ int main(int argc, char const *argv[])
     cout << "---------------------" << endl;
 
     cout << endl << "Testing First Name setters/getters: " << endl;
-    cout << "--------------------------------------------" << endl;
-    cout << p1.getFirstName() << endl;
-    cout << p2.getFirstName() << endl;
-    cout << p3.getFirstName() << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: " << endl << "Actual: " << p1.getFirstName() << endl;
+    cout << "Expected: Jimmy" << endl << "Actual: " << p2.getFirstName() << endl;
+    cout << "Expected: Jimmy" << endl << "Actual: " << p3.getFirstName() << endl;
     p1.setFirstName("Joe");
-    cout << p1.getFirstName() << endl;
+    cout << "Expected: Joe" << endl << "Actual: " << p1.getFirstName() << endl << endl;
 
-    cout << p1.getLastName() << endl;
-    cout << p2.getLastName() << endl;
-    cout << p3.getLastName() << endl;
+    cout << endl << "Testing Last Name setters/getters: " << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: " << endl << "Actual: " << p1.getLastName() << endl;
+    cout << "Expected: Odell" << endl << "Actual: " << p2.getLastName() << endl;
+    cout << "Expected: Odell" << endl << "Actual: " << p3.getLastName() << endl;
+    p1.setFirstName("MacEachon");
+    cout << "Expected: MacEachon" << endl << "Actual: " << p1.getLastName() << endl << endl;
 
     //cout << p1.getDateOfBirth() << endl;
     //cout << p2.getDateOfBirth() << endl;
     //cout << p3.getDateOfBirth() << endl;
 
-    cout << p1.getAddress() << endl;
-    cout << p2.getAddress() << endl;
-    cout << p3.getAddress() << endl;
+    cout << endl << "Testing Address setters/getters: " << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: " << endl << "Actual: " << p1.getAddress() << endl;
+    cout << "Expected: Home" << endl << "Actual: " << p2.getAddress() << endl;
+    cout << "Expected: Home" << endl << "Actual: " << p3.getAddress() << endl;
+    p1.setAddress("School");
+    cout << "Expected: School" << endl << "Actual: " << p1.getAddress() << endl << endl;
 
-    cout << p1.getNetID() << endl;
-    cout << p2.getNetID() << endl;
-    cout << p3.getNetID() << endl;
+    cout << endl << "Testing NetID setters/getters: " << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: " << endl << "Actual: " << p1.getNetID() << endl;
+    cout << "Expected: jo6kg" << endl << "Actual: " << p2.getNetID() << endl;
+    cout << "Expected: jo6kg" << endl << "Actual: " << p3.getNetID() << endl;
+    p1.setNetID("jm5ks");
+    cout << "Expected: jm5ks" << endl << "Actual: " << p1.getNetID() << endl << endl;
 
-    cout << p1.getURID() << endl;
-    cout << p2.getURID() << endl;
-    cout << p3.getURID() << endl;
+    cout << endl << "Testing URID setters/getters: " << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: " << endl << "Actual: " << p1.getURID() << endl;
+    cout << "Expected: 1245" << endl << "Actual: " << p2.getURID() << endl;
+    cout << "Expected: 1245" << endl << "Actual: " << p3.getURID() << endl;
+    p1.setURID(2456);
+    cout << "Expected: 2456" << endl << "Actual: " << p1.getURID() << endl << endl;
 
-    cout << p1.getEmail() << endl;
-    cout << p2.getEmail() << endl;
-    cout << p3.getEmail() << endl;
+    cout << endl << "Testing Email setters/getters: " << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: " << endl << "Actual: " << p1.getEmail() << endl;
+    cout << "Expected: jodell@richmond,edu" << endl << "Actual: " << p2.getEmail() << endl;
+    cout << "Expected: jodell@richmond.edu" << endl << "Actual: " << p3.getEmail() << endl;
+    p1.setEmail("jmaceachon@richmond.edu");
+    cout << "Expected: jmaceachon@richmond.edu" << endl << "Actual: " << p1.getEmail() << endl << endl;
 
-    cout << p1.getPhone() << endl;
-    cout << p2.getPhone() << endl;
-    cout << p3.getPhone() << endl;
+    cout << endl << "Testing Phone setters/getters: " << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: " << endl << "Actual: " << p1.getPhone() << endl;
+    cout << "Expected: 264524952" << endl << "Actual: " << p2.getPhone() << endl;
+    cout << "Expected: 264524952" << endl << "Actual: " << p3.getPhone() << endl;
+    p1.setPhone(2032478599);
+    cout << "Expected: 2032478599" << endl << "Actual: " << p1.getPhone() << endl << endl;
 
 
     //--------------------------------------------------------------------------
