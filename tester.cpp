@@ -58,12 +58,26 @@ int main(int argc, char const *argv[])
     cout << "Expected: " << endl << "Actual: " << p1.getLastName() << endl;
     cout << "Expected: Odell" << endl << "Actual: " << p2.getLastName() << endl;
     cout << "Expected: Odell" << endl << "Actual: " << p3.getLastName() << endl;
-    p1.setFirstName("MacEachon");
+    p1.setLastName("MacEachon");
     cout << "Expected: MacEachon" << endl << "Actual: " << p1.getLastName() << endl << endl;
 
-    //cout << p1.getDateOfBirth() << endl;
-    //cout << p2.getDateOfBirth() << endl;
-    //cout << p3.getDateOfBirth() << endl;
+
+    struct tm dob = p1.getDateOfBirth();
+    cout << endl << "Testing Date of Birth setters/getters: " << endl;
+    cout << "--------------------------------------------" << endl; 
+    cout << "Expected: 0/0/0" << endl << "Actual: " << 
+	dob.tm_mon << "/" << dob.tm_mday << "/" << dob.tm_year << endl;
+    dob = p2.getDateOfBirth();
+    cout << "Expected: 2/22/1997" << endl << "Actual: " << 
+	dob.tm_mon << "/" << dob.tm_mday << "/" << dob.tm_year << endl;
+    dob = p3.getDateOfBirth();
+    cout << "Expected: 2/22/1997" << endl << "Actual: " << 
+	dob.tm_mon << "/" << dob.tm_mday << "/" << dob.tm_year << endl;
+    p1.setDateOfBirth(12, 8, 1997);
+    dob = p1.getDateOfBirth();
+    cout << "Expected: 8/12/1997" << endl << "Actual: " << 
+	dob.tm_mon << "/" << dob.tm_mday << "/" << dob.tm_year << endl;
+
 
     cout << endl << "Testing Address setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
@@ -83,7 +97,7 @@ int main(int argc, char const *argv[])
 
     cout << endl << "Testing URID setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
-    cout << "Expected: " << endl << "Actual: " << p1.getURID() << endl;
+    cout << "Expected: 0" << endl << "Actual: " << p1.getURID() << endl;
     cout << "Expected: 1245" << endl << "Actual: " << p2.getURID() << endl;
     cout << "Expected: 1245" << endl << "Actual: " << p3.getURID() << endl;
     p1.setURID(2456);
@@ -99,7 +113,7 @@ int main(int argc, char const *argv[])
 
     cout << endl << "Testing Phone setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
-    cout << "Expected: " << endl << "Actual: " << p1.getPhone() << endl;
+    cout << "Expected: 0" << endl << "Actual: " << p1.getPhone() << endl;
     cout << "Expected: 264524952" << endl << "Actual: " << p2.getPhone() << endl;
     cout << "Expected: 264524952" << endl << "Actual: " << p3.getPhone() << endl;
     p1.setPhone(2032478599);

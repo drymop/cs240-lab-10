@@ -10,7 +10,20 @@ Person::Person()
 
 Person::Person(const Person& other)
 {
-    this->Person = new Person(other); 
+    this->urid = other.urid;
+    this->netid = other.netid;
+    this->lname = other.lname;
+    this->fname = other.fname;
+    this->dob_day = other.dob_day;
+    this->dob_month = other.dob_month;
+    this->dob_year = other.dob_year;
+    this->email = other.email;
+    this->address = other.address;
+    this->phone = other.phone;
+    this->dob_day = other.dob_day;
+    this->dob_month = other.dob_month;
+    this->dob_year = other.dob_year;
+
 }
 
 Person::Person(int urid, std::string netid, std::string lname, std::string fname,
@@ -27,7 +40,9 @@ Person::Person(int urid, std::string netid, std::string lname, std::string fname
     this->email = email;
     this->address = address;
     this->phone = phone;
-    this->dob = {.tm_year = (dob_year - 1990), .tm_mon = dob_month, .tm_mday = dob_day};
+    this->dob_day = dob_day;
+    this->dob_month = dob_month;
+    this->dob_year = dob_year;
 }
 
 Person::~Person() {}
@@ -44,6 +59,10 @@ std::string Person::getLastName()
 
 struct tm Person::getDateOfBirth()
 {
+    struct tm dob;
+    dob.tm_mday = dob_day;
+    dob.tm_mon = dob_month;
+    dob.tm_year = dob_year;
     return dob;
 }
 
@@ -84,9 +103,9 @@ void Person::setLastName(std::string lname)
 
 void Person::setDateOfBirth(int day, int month, int year)
 {
-    this->dob.tm_mday = day;
-    this->dob.tm_mon = month;
-    this->dob.tm_year = year;
+    this->dob_day = day;
+    this->dob_month = month;
+    this->dob_year = year;
 }
 
 void Person::setAddress(std::string address)
