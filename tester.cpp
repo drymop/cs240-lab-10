@@ -36,6 +36,9 @@ int main(int argc, char const *argv[])
     //--------------------------------------------------------------------------
     //Tests Person
     //--------------------------------------------------------------------------
+    //creates three Persons to be tested. The first is used as an empty constructor
+    //tester and later used to test the setters. The second Person is passed all 
+    //parameters it needs. The third is used to test a copy constructor.
     Person p1;
     Person p2 = Person(1245, "jo6kg", "Odell", "Jimmy", 22, 2, 1997, "jodell@richmond.edu", "Home", 264524952);
     Person p3 = p2;
@@ -45,6 +48,9 @@ int main(int argc, char const *argv[])
     cout << "Person:" << endl;
     cout << "---------------------" << endl;
 
+    //Tests the First name setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected.
     cout << endl << "Testing First Name setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
     cout << "Expected: " << endl << "Actual: " << p1.getFirstName() << endl;
@@ -52,7 +58,10 @@ int main(int argc, char const *argv[])
     cout << "Expected: Jimmy" << endl << "Actual: " << p3.getFirstName() << endl;
     p1.setFirstName("Joe");
     cout << "Expected: Joe" << endl << "Actual: " << p1.getFirstName() << endl << endl;
-
+    
+    //Tests the last name setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected.
     cout << endl << "Testing Last Name setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
     cout << "Expected: " << endl << "Actual: " << p1.getLastName() << endl;
@@ -61,7 +70,10 @@ int main(int argc, char const *argv[])
     p1.setLastName("MacEachon");
     cout << "Expected: MacEachon" << endl << "Actual: " << p1.getLastName() << endl << endl;
 
-
+    //Tests the Date of Birth setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected. This is done by creating a struct tm
+    //that is set to have all the information from the Person. 
     struct tm dob = p1.getDateOfBirth();
     cout << endl << "Testing Date of Birth setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
@@ -78,7 +90,9 @@ int main(int argc, char const *argv[])
     cout << "Expected: 8/12/1997" << endl << "Actual: " << 
 	dob.tm_mon << "/" << dob.tm_mday << "/" << dob.tm_year << endl;
 
-
+    //Tests the address setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected.
     cout << endl << "Testing Address setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
     cout << "Expected: " << endl << "Actual: " << p1.getAddress() << endl;
@@ -86,7 +100,10 @@ int main(int argc, char const *argv[])
     cout << "Expected: Home" << endl << "Actual: " << p3.getAddress() << endl;
     p1.setAddress("School");
     cout << "Expected: School" << endl << "Actual: " << p1.getAddress() << endl << endl;
-
+    
+    //Tests the Net ID setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected.
     cout << endl << "Testing NetID setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
     cout << "Expected: " << endl << "Actual: " << p1.getNetID() << endl;
@@ -94,7 +111,10 @@ int main(int argc, char const *argv[])
     cout << "Expected: jo6kg" << endl << "Actual: " << p3.getNetID() << endl;
     p1.setNetID("jm5ks");
     cout << "Expected: jm5ks" << endl << "Actual: " << p1.getNetID() << endl << endl;
-
+    
+    //Tests the URID setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected.
     cout << endl << "Testing URID setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
     cout << "Expected: 0" << endl << "Actual: " << p1.getURID() << endl;
@@ -102,7 +122,10 @@ int main(int argc, char const *argv[])
     cout << "Expected: 1245" << endl << "Actual: " << p3.getURID() << endl;
     p1.setURID(2456);
     cout << "Expected: 2456" << endl << "Actual: " << p1.getURID() << endl << endl;
-
+    
+    //Tests the email setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected.
     cout << endl << "Testing Email setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
     cout << "Expected: " << endl << "Actual: " << p1.getEmail() << endl;
@@ -111,6 +134,9 @@ int main(int argc, char const *argv[])
     p1.setEmail("jmaceachon@richmond.edu");
     cout << "Expected: jmaceachon@richmond.edu" << endl << "Actual: " << p1.getEmail() << endl << endl;
 
+    //Tests the phone number setters and getters by calling the getters on all of the
+    //Persons created. Then it tests the setters by setting in p1 and calling the 
+    //getters to compare the entered to the expected.
     cout << endl << "Testing Phone setters/getters: " << endl;
     cout << "--------------------------------------------" << endl; 
     cout << "Expected: 0" << endl << "Actual: " << p1.getPhone() << endl;
