@@ -1,6 +1,12 @@
 #ifndef __PERSON_CPP_
 #define __PERSON_CPP_
 
+/*
+ * Author: Jimmy Odell
+ *
+ * Date: 4/8/18
+ */
+
 #include "Person.h"
 #include <iostream>
 
