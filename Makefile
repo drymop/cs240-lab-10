@@ -1,5 +1,5 @@
 EXECS = tester
-OBJS = Person.o Student.o
+OBJS = Person.o Student.o tester.o
 
 CC = g++
 CCFLAGS = -std=c++11 -Wall -g
