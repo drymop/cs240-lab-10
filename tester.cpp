@@ -4,7 +4,7 @@
 
 void testStudent(Student& s, int day_admit, int mo_admit, int yr_admit, 
             Student::School school, double gpa, double unit_completed, 
-            bool is_full_time, std::list<std::string> courses)
+            bool is_full_time, std::list<std::string> courses);
 /*
  *Author: Jimmy Odell, Tuan 
  *
